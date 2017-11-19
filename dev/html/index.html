@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="game">
+        <div id="input-area">
+            <input type="text" maxlength="1" id="num1" />
+            <input type="text" maxlength="1" id="num2" />
+            <input type="text" maxlength="1" id="num3" />
+            <input type="text" maxlength="1" id="num4" />
+            <button id="lock">></button>
+        </div>
+        <div id="log">
+        </div>
+    </div>
+
+<template id="logEntry">
+    <div class="log-entry">
+        <div class="num">?</div>
+        <div class="num">?</div>
+        <div class="num">?</div>
+        <div class="num">?</div>
+
+        <div class="bar">
+            <div class="status"></div>
+            <div class="status"></div>
+            <div class="status"></div>
+            <div class="status"></div>
+        </div>
+    </div>
+</template>
+</body>
+</html>
