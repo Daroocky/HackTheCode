@@ -1,0 +1,27 @@
+{
+  "name": "hackthecode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-typescript": "^3.2.3",
+    "typescript": "^2.6.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/DreiAugenFrosch/HackTheCode.git"
+  },
+  "author": "Stefan Roock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/DreiAugenFrosch/HackTheCode/issues"
+  },
+  "homepage": "https://gitlab.com/DreiAugenFrosch/HackTheCode#README"
+}
