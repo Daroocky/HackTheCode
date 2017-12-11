@@ -5,9 +5,17 @@ body {
 
 #game {
   position: absolute;
-  top: 5%;
+  top: 50%;
   left: 50%;
-  transform:  translateX(-50%);
+  transform:  translate(-50%, -50%);
+
+  -webkit-transition: all 2s; /* Safari */
+  transition: all 2s;
+
+  &.start {
+   top: 5%;
+    transform:  translate(-50%, 0%);
+  }
 }
 
 #input-area {
@@ -34,6 +42,20 @@ body {
 }
 
 #log {
+  position: absolute;
+  top: 0;
+  margin-top: 68px;
+  z-index: -50;
+
+  &.animate {
+    -webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+  }
+
+  &.newLog {
+    margin-top: 0;
+  }
+
   .log-entry {
     margin-bottom: 15px;
 
@@ -69,5 +91,30 @@ body {
         background-color: #790F00;
       }
     }
+  }
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &-lock-closed::before {
+    content: "\f023";
+  }
+
+  &-lock-open::before {
+    content: "\f13e";
   }
 }

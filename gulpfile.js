@@ -24,8 +24,13 @@ gulp.task('js', function () {
     .pipe(gulp.dest('app/js'));
 });
 
+gulp.task('fonts', function () {
+    return gulp.src('dev/fonts/*.*')
+        .pipe(gulp.dest('app/fonts'));
+});
+
 gulp.task('typescript', function () {
-  return gulp.src('dev/ts/*.ts')
+  return gulp.src(['dev/ts/ResultLog.ts', 'dev/ts/*.ts'])
     .pipe(ts({
       noImplicitAny: true,
       removeComments: true,
