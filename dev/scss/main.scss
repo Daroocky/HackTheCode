@@ -7,14 +7,15 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform:  translate(-50%, -50%);
+  transform:  translate(-50%, -50%) scale(2);
+  transform-origin: 50% 50%;
 
-  -webkit-transition: all 2s; /* Safari */
-  transition: all 2s;
+  -webkit-transition: all 1s; /* Safari */
+  transition: all 1s;
 
   &.start {
-   top: 5%;
-    transform:  translate(-50%, 0%);
+    top: 5%;
+    transform:  translate(-50%, 0%) scale(1);
   }
 }
 

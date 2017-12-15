@@ -28,15 +28,24 @@ class ResultLog {
             index++;
         }
 
-        $("#log").addClass("newLog");
-        $("#log").prepend($html);
+
+        var waitTillStart = 0;
+        if($("#log").html() == "") {
+            waitTillStart = 1000;
+        }
 
         setTimeout(function () {
-            $("#log").addClass("animate");
-            $("#log").removeClass("newLog");
+            $("#log").addClass("newLog");
+            $("#log").prepend($html);
+
             setTimeout(function () {
-                $("#log").removeClass("animate");
-            }, 1000);
-        }, 100);
+                $("#log").addClass("animate");
+                $("#log").removeClass("newLog");
+                setTimeout(function () {
+                    $("#log").removeClass("animate");
+                }, 1000);
+            }, 100);
+        }, waitTillStart);
+
     }
 }

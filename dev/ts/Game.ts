@@ -30,36 +30,41 @@ class Game {
                 this.eventCheckCode()
             });
             $("input").on("keyup", (e: any) => {
-                this.eventNextInput(e)
-            });
-            $("input").on("keydown", (e: any) => {
                 this.eventNavigate(e)
+                this.eventNextInput(e)
             });
         });
     }
 
     eventNavigate(event: any) {
-        if (event.keyCode == 37) {
-            $(event.target).prev("input").focus();
+         if (event.keyCode == 37) {
+            $(event.target).prev("input").focus().select();
         }
 
         if (event.keyCode == 39) {
-            $(event.target).next("input").focus();
+            $(event.target).next("input").focus().select();
         }
     }
 
     eventNextInput(event: any) {
+        if(event.keyCode != 37 && event.keyCode != 39) {
+            if (isNaN($(event.target).val())) {
+                $(event.target).val("");
+            }
 
-        if (isNaN($(event.target).val())) {
-            $(event.target).val("");
-        }
+            var inputValues = ["0"];
+            if($(event.target).attr("id") != "num1") inputValues.push($("#num1").val());
+            if($(event.target).attr("id") != "num2") inputValues.push($("#num2").val());
+            if($(event.target).attr("id") != "num3") inputValues.push($("#num3").val());
+            if($(event.target).attr("id") != "num4") inputValues.push($("#num4").val());
 
-        if($(event.target).val() == 0) {
-            $(event.target).val("");
-        }
+            if(inputValues.indexOf($(event.target).val()) != -1) {
+                $(event.target).val("");
+            }
 
-        if ($(event.target).val() !== "") {
-            $(event.target).next().focus();
+            if ($(event.target).val() !== "") {
+                $(event.target).next().focus();
+            }
         }
     }
 

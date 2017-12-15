@@ -6,6 +6,8 @@ class CodeGenerator {
     }
 
     public checkCode(num: number) : resultJson {
+        let allreadyCheckedNumbers = [];
+
         let result : resultJson = {
             "right": 0,
             "position": 0,
@@ -17,10 +19,16 @@ class CodeGenerator {
 
         if (codeArray.length == numArray.length) {
             for (let i = 0; i < numArray.length; i++) {
-                if (codeArray[i] == numArray[i]) {
-                    result.right++;
-                } else if (codeArray.indexOf(numArray[i]) != -1) {
-                    result.position++;
+                if(allreadyCheckedNumbers.indexOf(numArray[i]) == -1) {
+                    if (codeArray[i] == numArray[i]) {
+                        result.right++;
+                    } else if (codeArray.indexOf(numArray[i]) != -1) {
+                        result.position++;
+                    } else {
+                        result.wrong++;
+                    }
+
+                    allreadyCheckedNumbers.push(numArray[i]);
                 } else {
                     result.wrong++;
                 }
