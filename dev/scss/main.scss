@@ -16,6 +16,16 @@ body {
   &.start {
     top: 5%;
     transform:  translate(-50%, 0%) scale(1);
+
+    .logo {
+      opacity: 0;
+      height: 0;
+      margin-bottom: 0;
+    }
+
+    .description {
+      opacity: 0;
+    }
   }
 }
 
@@ -127,4 +137,23 @@ body {
   &-lock-open::before {
     content: "\f13e";
   }
+}
+
+.logo {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  margin-bottom: 20px;
+
+  -webkit-transition: all 0.5s; /* Safari */
+  transition: all 0.5s;
+}
+
+.description {
+  color: white;
+  font-size: 8px;
+  margin-top: 25px;
+
+  -webkit-transition: all 0.5s; /* Safari */
+  transition: all 0.5s;
 }

@@ -81,6 +81,8 @@ class Game {
             this.won = false;
 
             $(".icon").removeClass("icon-lock-open").addClass("icon-lock-closed");
+            $(".description").show();
+            $(".logo").text("HACK THE CODE");
 
             $("#num1").val("").attr("disabled", false).focus();
             $("#num2").val("").attr("disabled", false);
@@ -115,7 +117,11 @@ class Game {
 
             $(".icon").removeClass("icon-lock-closed").addClass("icon-lock-open");
 
+            $(".logo").text("CODE HACKED");
+            $(".description").hide();
+
             $("#game").removeClass("start");
+
             $("#log").addClass("animate");
             $("#log").addClass("hide");
             setTimeout(function () {

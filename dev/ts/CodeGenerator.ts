@@ -3,7 +3,6 @@ class CodeGenerator {
 
     public generateCode() {
         this.code = parseInt(this.shuffle("123456789".split('')).join('').substring(0, 4));
-        console.log(this.code);
     }
 
     public checkCode(num: number) : resultJson {
