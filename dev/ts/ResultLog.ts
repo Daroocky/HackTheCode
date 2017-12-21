@@ -2,6 +2,10 @@ class ResultLog {
     public add(num: number, result: resultJson) {
         $("#game").addClass("start");
 
+        setTimeout(function () {
+            $(".logo").hide();
+        },1000);
+
         let numArray = ("" + num).split("");
 
         let $html = $($("#logEntry").html());

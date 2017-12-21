@@ -119,6 +119,7 @@ class Game {
 
             $(".logo").text("CODE HACKED");
             $(".description").hide();
+            $(".logo").show();
 
             $("#game").removeClass("start");
 
